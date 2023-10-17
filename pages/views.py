@@ -28,10 +28,10 @@ class Page1Create(LoginRequiredMixin, CreateView):
         contracts = Object.objects.all()
         return contracts
 
-    def form_valid(self, form):
-        obj = form.save(commit=False)
-        obj.consumer_category = self.request.user.consumer_category
-        return super().form_valid(form)
+    # def form_valid(self, form):
+    #     obj = form.save(commit=False)
+    #     obj.consumer_category = self.request.user.consumer_category
+    #     return super().form_valid(form)
 
     def get_success_url(self):
         last_id = Object.objects.filter().order_by('id').last().id

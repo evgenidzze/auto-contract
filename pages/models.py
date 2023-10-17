@@ -105,7 +105,7 @@ class Object(models.Model):
                                                     verbose_name="Скорочена повна юр. назва основного споживача")
     general_full_name = models.CharField(default='', max_length=100, blank=True,
                                          verbose_name="Повна юр. назва основного споживача")
-    consumer_category = models.ForeignKey('ConsumerCategory', on_delete=models.CASCADE)
+    consumer_category = models.ForeignKey('ConsumerCategory', on_delete=models.CASCADE, default=1)
 
     def __str__(self):
         return str(self.department)
